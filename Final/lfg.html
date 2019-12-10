@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <title>Thinger</title>
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+
+<body>
+    <div id="root">
+        <div class="hero is-dark is-bold is-fullheight">
+            <div class="hero-head" id="nav">
+                <nav class="navbar">
+                    <div class="container">
+                        <div class="navbar-menu" id="navbar">
+                            <div class="navbar-start" id="navbar-start">
+                                <a class="navbar-item" href="index.html">Home</a>
+                            </div>
+                            <div class="navbar-end" id="navbar-end">
+                                <a id="login" class="navbar-item" href="login.html">Log In</a>
+                                <a id="signup" class="navbar-item" href="signup.html">Sign Up</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <div class="container has-text-centered" id="title">
+                    <p class="title">LFG</p>
+                </div>
+                <div class="columns">
+                    
+                    <div class="column" id="topbuttons"></div>
+                </div>
+            </div>
+            <div class="hero-body" id="body">
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script scr="realms.js"></script>
+    <script type="module" src="lfg.js"></script>
+
+</body>
+
+</html>

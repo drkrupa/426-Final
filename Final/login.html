@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <title>Thinger</title>
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="hero is-dark is-bold is-fullheight">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-menu">
+                        <div class="navbar-start">
+                            <a class="navbar-item" href="index.html">Home</a>
+                            <a id="lfg" class="navbar-item" href="lfg.html">Recruiting</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="container has-text-centered">
+                <p class="title">Log In</p>
+            </div>
+        </div>
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="field" id="input">
+                    <input id="username" class="input" type="text" placeholder="Username">
+                    <input id="password" class="input" type="password" placeholder="Password">
+                    <button class="button is-dark login" type="submit">Log In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script type="module" src="render.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{
+  "users": {
+    "apurk": {
+      "passwordHash": "$2a$10$2HvJUwtZ0S4lkC5GuqLUnuUdP8zJuz45qwWRm7FHXPpR/o/fBdH0i"
+    },
+    "hi ther": {
+      "passwordHash": "$2a$10$keaP3F.i17o1z7mq.54os.LOe2ieMwAzLYB5mRZX2gbu1/kmWt3Gi"
+    },
+    "notpurk": {
+      "passwordHash": "$2a$10$k6FWZZHNsTacRG/73csplO.lwccfrZ5KXeqWXYsaaKxCbg5csVCEK"
+    },
+    "people": {
+      "passwordHash": "$2a$10$kc3iBnD4h5ZyrtjK5vQCGOVClRLtJyzkTnf0cUUPDYyONhEUdkZku"
+    },
+    "purkleton": {
+      "passwordHash": "$2a$10$tVueFr64Ki2ekBcMKDtwpux6f1Jg7C9JHGASfogSeBn2yIaGcQM6S"
+    }
+  }
+}

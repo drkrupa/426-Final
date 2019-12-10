@@ -1,0 +1,93 @@
+p.error {
+    color: red;
+}
+
+span.Death {
+    color: #C41F3B;
+}
+
+
+
+span.Druid {
+    color: #FF7D0A;
+}
+
+span.Hunter {
+    color: #ABD473;
+}
+
+span.Demon {
+    color: #A330C9;
+}
+
+span.Mage {
+    color: #69CCF0;
+}
+
+span.Monk {
+    color: #00FF96;
+}
+
+span.Paladin {
+    color: #F58CBA;
+}
+
+span.Priest {
+    color: #FFFFFF;
+}
+
+span.Rogue {
+    color: #FFF569;
+}
+
+span.Shaman {
+    color: #0070DE;
+}
+
+span.Warlock {
+    color: #9482C9;
+}
+
+span.Warrior {
+    color: #C79C6E;
+}
+
+.Horde {
+    color: #e02929;
+}
+
+.Alliance {
+    color: #6699FF;
+}
+
+.poor {
+    color: #889D9D
+}
+
+.uncommon {
+    color: #1eff0c;
+}
+
+.rare {
+    color: #0070FF;
+}
+
+.epic {
+    color: #A335EE;
+}
+
+.legendary {
+    color: #FF8000;
+}
+
+.artifact {
+    color: #E6CC80;
+}
+
+div.blank {
+    width: 100%;
+    height: 20px;
+}
+
+
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <title>Thinger</title>
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.css" />
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script>var whTooltips = {colorLinks: true, iconizeLinks: true, renameLinks: true};</script>
+    <script src="https://wow.zamimg.com/widgets/power.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <div class="hero is-dark is-bold is-fullheight">
+            <div class="hero-head" id="nav">
+                <nav class="navbar">
+                    <div class="container">
+                        <div class="navbar-menu" id="navbar">
+                            <div class="navbar-start" id="navbar-start">
+                                <a id="lfg" class="navbar-item" href="lfg.html">Recruiting</a>
+                            </div>
+                            <div class="navbar-end" id="navbar-end">
+                                <a id="login" class="navbar-item" href="login.html">Log In</a>
+                                <a id="signup" class="navbar-item" href="signup.html">Sign Up</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <div class="container has-text-centered" id="title">
+                    <p class="title">Howdy</p>
+                </div>
+            </div>
+            <div class="hero-body" id="body">
+                <div class="container" id="search">
+                    <div class="columns has-text-centered">
+                    
+                        <div class="column">
+                            <form autocomplete="off">
+                                <div class="autocomplete">
+                                    <input class="input" type="text" placeholder="Realm" id="realm">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="column is-half">
+                            <div class="form">
+                                <input class="input" type="text" placeholder="Character" id="name">
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="form">
+                                <button class="button is-dark searchButton" type="submit">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script scr="realms.js"></script>
+    <script type="module" src="index.js"></script>
+
+</body>
+
+</html>
