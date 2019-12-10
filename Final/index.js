@@ -270,6 +270,7 @@ export async function renderPvP(region, realm, name) {
 
 
     return `<div class="box"><p>Honor Level: ${honor}
+            <br><strong class="has-text-white">Arena:</strong>
             <br>2v2: <span class=${c2}>${twos}</span>
             <br>3v3: <span class=${c3}>${threes}</span></p></div></div>`
 }

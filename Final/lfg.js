@@ -28,6 +28,8 @@ export function renderShowPostButtons() {
 
 export async function showLFGPosts() {
     $('#lfg').remove();
+    $('#lfm').remove();
+    $('#newPost').remove();
     let url = 'http://localhost:3000/public/lfg';
     const result = await axios({
         method: 'get',
@@ -43,11 +45,26 @@ export async function showLFGPosts() {
     $('button.deleteButton').on('click', handleLFGDelete);
 }
 export async function showLFMPosts() {
-
+    $('#lfg').remove();
+    $('#lfm').remove();
+    $('#newPost').remove();
+    let url = 'http://localhost:3000/public/lfm';
+    const result = await axios({
+        method: 'get',
+        url: url,
+    });
+    let e = `<div class="columns" id="lfm"><div class="column">`;
+    for (let i = Object.keys(result.data.result).length - 1; i >= 0; i--) {
+        e += renderLFMPost(result.data.result[Object.keys(result.data.result)[i]]);
+    }
+    e += `</div></div>`;
+    $('#body').append(e);
+    $('button.editButton').on('click', handleLFMEdit);
+    $('button.deleteButton').on('click', handleLFMDelete);
 }
 
 export function handleNewPost() {
-    let c = `<div id="newPost" class="box">
+    let c = `<div id="newPost" class="box" style="width: 2000px">
                 <form><div class="columns">
                     <div class="column"><textarea id="newPostBody" rows="5" cols="50" placeholder="Post here (Be sure to include contact information)"></textarea></div>
                     <div class="column">
@@ -59,7 +76,7 @@ export function handleNewPost() {
                     </div>
                     </div>
                     <div class="column"><input class="input" type="text" placeholder="Character or Guild name" id="name">
-                    <div class="autocomplete"><input class="input" type="text" placeholder="Realm" id="realm"></div></div>
+                    <div class="autocomplete"><input class="input" type="text" placeholder="Realm" id="realm"><p>Note: Spaces must be input as hyphens</p></div></div>
                     <div class="column"><button type="submit" class="button submitButton is-dark">Post</button><br>
                     <button type="button" class="button cancelButton is-dark">Cancel</button></div>
                 </div></form>
@@ -90,17 +107,34 @@ export async function handleLFGEdit(event) {
     });
     let obj = result.data.result;
     let e = `<div id=${id} class="box is-dark"><p><span class=${obj.class}>${obj.name}-${obj.realm}</span></p>
-                <textarea id="editedBody${id}" placeholder=${obj.post} rows=4 cols=50></textarea>
-                <div class="columns"><div class="column has-text-centered"><button type="submit" class="button subEditButton is-dark">Post</button>
-                <button type="button" class="button cancelEditButton is-dark">Cancel</button></div></div>
+                <textarea id="editedBody${id}" rows=4 cols=50>${obj.post}</textarea>
+                <div class="columns"><div class="column has-text-centered"><button type="submit" class="button subEditButton${id} is-dark">Post</button>
+                <button type="button" class="button cancelEditButton${id} is-dark">Cancel</button></div></div>
             </div>`
     $(`#${id}`).replaceWith(e);
-    $('button.cancelEditButton').on('click', cancelLFGEdit);
-    $('button.subEditButton').on('click', submitLFGEdit);
+    $(`button.cancelEditButton${id}`).on('click', cancelLFGEdit);
+    $(`button.subEditButton${id}`).on('click', submitLFGEdit);
 }
 
 export async function submitLFGEdit(event) {
+    let id = event.target.parentElement.parentElement.parentElement.id;
+    let url = `http://localhost:3000/public/lfg/${id}`;
+    const result = await axios({
+        method: 'get',
+        url: url,
+    });
+    let body = $(`#editedBody${id}`).val();
+    let name = result.data.result.name;
+    let realm = result.data.result.realm;
+    let c = result.data.result.class;
+    let u = `http://localhost:3000/public/lfg/${id}`;
+    const res = await axios({
+        method: 'post',
+        url: u,
+        data: { data: { 'post': body, 'id': id, 'author': user, 'name': name, 'realm': realm, 'class': c } },
+    });
 
+    showLFGPosts();
 }
 
 export async function cancelLFGEdit(event) {
@@ -127,23 +161,88 @@ export async function handleLFGDelete(event) {
     showLFGPosts();
 }
 
+export async function handleLFMDelete(event) {
+    let id = event.target.parentElement.id;
+    let url = `http://localhost:3000/public/lfm/${id}`;
+    const res = await axios({
+        method: 'delete',
+        url: url,
+    });
+    showLFMPosts();
+}
+
+export async function handleLFMEdit(event) {
+    let id = event.target.parentElement.id;
+    let url = `http://localhost:3000/public/lfm/${id}`;
+    const result = await axios({
+        method: 'get',
+        url: url,
+    });
+    let obj = result.data.result;
+    let e = `<div id=${id} class="box is-dark"><p><span class=${obj.class}>&#60;${obj.name}&#62;-${obj.realm}</span></p>
+                <textarea id="editedBody${id}" rows=4 cols=50>${obj.post}</textarea>
+                <div class="columns"><div class="column has-text-centered"><button type="submit" class="button subEditButton${id} is-dark">Post</button>
+                <button type="button" class="button cancelEditButton${id} is-dark">Cancel</button></div></div>
+            </div>`
+    $(`#${id}`).replaceWith(e);
+    $(`button.cancelEditButton${id}`).on('click', cancelLFMEdit);
+    $(`button.subEditButton${id}`).on('click', submitLFMEdit);
+}
+
+export async function submitLFMEdit(event) {
+    let id = event.target.parentElement.parentElement.parentElement.id;
+    let url = `http://localhost:3000/public/lfm/${id}`;
+    const result = await axios({
+        method: 'get',
+        url: url,
+    });
+    let body = $(`#editedBody${id}`).val();
+    let name = result.data.result.name;
+    let realm = result.data.result.realm;
+    let c = result.data.result.class;
+    let u = `http://localhost:3000/public/lfm/${id}`;
+    const res = await axios({
+        method: 'post',
+        url: u,
+        data: { data: { 'post': body, 'id': id, 'author': user, 'name': name, 'realm': realm, 'class': c } },
+    });
+
+    showLFMPosts();
+}
+
+export async function cancelLFMEdit(event) {
+    let id = event.target.parentElement.parentElement.parentElement.id;
+    let url = `http://localhost:3000/public/lfm/${id}`;
+    const result = await axios({
+        method: 'get',
+        url: url,
+    });
+    let obj = result.data.result;
+    let e = renderLFMPost(obj);
+    $(`#${id}`).replaceWith(e);
+    $('button.editButton').on('click', handleLFGEdit);
+    $('button.deleteButton').on('click', handleLFGDelete);
+}
+
 export async function handlePost() {
     event.preventDefault();
     $('#error').remove();
     let body = $('#newPostBody').val();
     let type = $('#type :selected').val();
     let id = await getID();
-    let realm = $('#realm').val().toLowerCase();
-    let name = $('#name').val().toLowerCase();
-    var c;
+    let slug = $('#realm').val().toLowerCase();
+    let name_l = $('#name').val().toLowerCase();
+    var c, realm, name;
     if (type == 'lfg') {
         try {
-            let u = `https://us.api.blizzard.com/profile/wow/character/${realm}/${name}?namespace=profile-us&locale=en_US&access_token=${token}`;
+            let u = `https://us.api.blizzard.com/profile/wow/character/${slug}/${name_l}?namespace=profile-us&locale=en_US&access_token=${token}`;
             const res = await axios({
                 method: 'get',
                 url: u,
             });
             c = res.data.character_class.name;
+            realm = res.data.realm.name;
+            name = res.data.name;
         } catch (error) {
             let e = `<div id="error">
                 <p class="error">Invalid Character</p>
@@ -153,12 +252,14 @@ export async function handlePost() {
         }
     } else {
         try {
-            let u = `https://us.api.blizzard.com/data/wow/guild/${realm}/${name}?namespace=profile-us&locale=en_US&access_token=${token}`;
+            let u = `https://us.api.blizzard.com/data/wow/guild/${slug}/${name_l}?namespace=profile-us&locale=en_US&access_token=${token}`;
             const res = await axios({
                 method: 'get',
                 url: u,
             });
             c = res.data.faction.name;
+            realm = res.data.realm.name;
+            name = res.data.name;
         } catch (error) {
             let e = `<div id="error">
             <p class="error">Invalid Guild</p>
@@ -167,17 +268,19 @@ export async function handlePost() {
             return;
         }
     }
-    let url = `http://localhost:3000/public/${type}/${id}`
+    let url = `http://localhost:3000/public/${type}/${id}`;
     const result = await axios({
         method: 'post',
         url: url,
-        data: { data: { 'post': body, 'id': id, 'author': user, 'name': name, 'realm': realm, 'class': c } },
+        data: { data: { 'post': body, 'id': id, 'author': user, 'name': name, 'realm': realm, 'class': c, 'slug': slug, 'name_l': name_l } },
     });
     id++;
     updateID(id);
     $('#newPost').remove();
     if (type == 'lfg') {
         showLFGPosts();
+    } else {
+        showLFMPosts();
     }
 }
 
@@ -219,6 +322,30 @@ export function renderPost(obj) {
     } else {
         let e = `<div id=${obj.id} class="box is-dark">
         <p><strong><span class=${obj.class}>${obj.name}-${obj.realm}</span></strong>
+            <br>
+            ${obj.post}
+            <br>
+        </p>
+    </div>`;
+        return e;
+    }
+}
+
+export function renderLFMPost(obj) {
+    if (obj.author == user) {
+        let e = `<div id=${obj.id} class="box is-dark">
+        <p><strong><span class=${obj.class}>&#60;${obj.name}&#62;-${obj.realm}</span></strong>
+            <br>
+            ${obj.post}
+            <br>
+        </p>
+        <button type="button" class="button editButton is-small is-dark">Edit</button>
+        <button type="button" class="button deleteButton is-small is-dark">Delete</button>
+    </div>`
+        return e;
+    } else {
+        let e = `<div id=${obj.id} class="box is-dark">
+        <p><strong><span class=${obj.class}>&#60;${obj.name}&#62;-${obj.realm}</span></strong>
             <br>
             ${obj.post}
             <br>
