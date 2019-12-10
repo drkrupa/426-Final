@@ -35,8 +35,8 @@ export async function handleSearch() {
         let e = `<div id="error">
                 <p class="error">${msg}</p>
             </div>`
-        $('#body').append(e);
-        $('#char').remove();
+        $('#search').append(e);
+        //$('#char').remove();
     }
 }
 

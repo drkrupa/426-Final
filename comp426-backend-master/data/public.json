@@ -1,27 +1,7 @@
 {
   "id": {
-    "id": 19
+    "id": 21
   },
-  "lfg": {
-    "17": {
-      "post": "Hello there kids",
-      "id": "17",
-      "author": "purkleton",
-      "name": "Apurk",
-      "realm": "Bleeding Hollow",
-      "class": "Mage"
-    }
-  },
-  "lfm": {
-    "18": {
-      "post": "greetings",
-      "id": 18,
-      "author": "purkleton",
-      "name": "A Reddit Dystopia",
-      "realm": "Bleeding Hollow",
-      "class": "Horde",
-      "slug": "bleeding-hollow",
-      "name_l": "a-reddit-dystopia"
-    }
-  }
+  "lfg": {},
+  "lfm": {}
 }
