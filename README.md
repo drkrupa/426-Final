@@ -3,9 +3,8 @@ Final Project for Comp 426
 
 For testing purposes, in case you are not familiar with World of Warcraft, a list of some characters to try:
 
-Name                                    Realm
-Apurk                                   Bleeding-hollow
-Murderotik                              Bleeding-hollow
-Jdotb                                   Turalyon
-Dylemmerz                               Illidan
-Thalamir                                Aerie-peak
+Apurk      on                             Bleeding-hollow<br>
+Murderotik   on                           Bleeding-hollow<br>
+Jdotb          on                         Turalyon<br>
+Dylemmerz        on                       Illidan<br>
+Thalamir           on                     Aerie-peak<br>
