@@ -324,7 +324,7 @@ export function renderPost(obj) {
         return e;
     } else {
         let e = `<div id=${obj.id} class="box is-dark">
-        <p><strong><span class=${obj.class}>${obj.name}-${obj.realm}</span></strong>
+        <p><strong class="has-text-white"><span class=${obj.class}>${obj.name}</span>-<span class=${obj.faction}>${obj.realm}</span></strong>
             <br>
             ${obj.post}
             <br>
