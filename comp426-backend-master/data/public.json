@@ -1,7 +1,67 @@
 {
   "id": {
-    "id": 21
+    "id": 31
   },
-  "lfg": {},
-  "lfm": {}
+  "lfg": {
+    "24": {
+      "post": "**looking more for something for 8.3 onward, my interest to finish off TEP is minimal but if needed can raid for prog in TEP\n\n\nback from hiatus since guild disbanded after orgo, lf guild w/ ce history\nprefer a guild that isn't all boomers & don't talk about their kids all raid, be cool dudes\nprefer 2 day\n\nhistory from bfa\n5/8m tep\n9/9m bod us 300~\n8/8m uldir us 300~",
+      "id": "24",
+      "author": "purkleton",
+      "name": "Devy",
+      "realm": "Thrall",
+      "class": "Rogue",
+      "faction": "Horde"
+    },
+    "25": {
+      "post": "Old top 200 world, top 50 US raider looking for a new guild to push progression with in upcoming patches. I have multiple AoTC achievements from raids I’ve done (MoP, WoD, and Legion) with a world first kill on Twin Orgrons. Server and faction transfer ready! Raid times and days I’m looking for are Friday Saturday from 11pm CST on or weekdays from 4-8 CST!!",
+      "id": 25,
+      "author": "purkleton",
+      "name": "Stamavra",
+      "realm": "Hydraxis",
+      "class": "Death Knight",
+      "slug": "hydraxis",
+      "name_l": "stamavra",
+      "faction": "Alliance"
+    },
+    "27": {
+      "post": "Looking for a guild on either horde or alliance\nwould like to raid tues/thurs anytime!\n\nhave all benthic gear and essences :)\nOnly started to raid in legion around late tomb soo...\n\nABT - CE\nUldir - CE\nBOD - CE\nEP - (6/8M)\nLegion m+ 4800+ io\nBFA m+\n- Season 1 2000+\n- Season 2 2500+\n- Season 3 2400+ (cause this season sucks :/)\n\nLooking for an established guild on either horde or alliance that clears content in a reasonable time and likes to push keys and do other stuff outside of raid.",
+      "id": 27,
+      "author": "purkleton",
+      "name": "Forbíddenx",
+      "realm": "Turalyon",
+      "class": "Rogue",
+      "slug": "turalyon",
+      "name_l": "forbíddenx",
+      "faction": "Horde"
+    }
+  },
+  "lfm": {
+    "28": {
+      "post": "Current Progression: 4/8M 8/8H EP\n\nRaid Days/Times: Friday/Sunday 8 pm - 11 pm EST\n\nRecruitment Contact: Lanoline#1436 (Discord & Bnet)\n\nNeeds: We are currently recruiting for 8.3 and have a high need for a DPS with tank OS, as well as other, ranged and melee DPS. We will consider all classes as we value the player over the class! Please contact us on Discord or Bnet, or submit an application here: https://goo.gl/forms/BmCXTR1bbmFmBUZ33\n\nAbout Us: HFD is a mythic raiding guild on US Turalyon, we aim to bring a sense of community and fun to all that we do. We strive to uphold a supportive and productive raid environment in order to progress through mythic content while still maintaining a positive atmosphere. The guild's history dates back to Cataclysm, we enjoy raiding, PvP, mythic+, achievement runs and much more in WoW as well as playing other games together outside of WoW and attending Blizzcon!",
+      "id": 28,
+      "author": "purkleton",
+      "name": "Horder Faster Deeper",
+      "realm": "Turalyon",
+      "class": "Horde",
+      "slug": "turalyon",
+      "name_l": "horder-faster-deeper",
+      "faction": "Horde"
+    },
+    "29": {
+      "post": "About:\nStreet Corner Horde started in November of 2005, and has continued to clear raids and stay strong to the current day.\n\nInformation:\nGuilds like to bolster their server firsts or top-end raiding rankings, however, very few guilds possess the longevity that we offer. Furthermore, we raid only during the times & days we've posted, and we don't \"pad\" wowprogress \"meters.\"\n\nR A I D I N G:\n- RAID DAYS: Mo.Tu.We: 830p-12a EST (10.5hrs/week)\n- Planning and preparation are essential key raiding components for our guild... So it's expected that you're proactive on your own time outside of raiding, and that you're completely ready for raid encounters (MoDs, WeakAuras, and etc..).\n\nWe handle loot using the addon BigDumbLootCouncil, so this addon is required when raiding here.",
+      "id": "29",
+      "author": "purkleton",
+      "name": "SCH",
+      "realm": "Bleeding Hollow",
+      "class": "Horde"
+    },
+    "30": {
+      "post": "Roulette on US-Sargeras is recruiting to bolster our ranks as we grow each tier. Formerly Astro Glide and Internet Dragon Slayers, Roulette has quickly improved since our transition to a more competitive mindset following Uldir, and plan to continue this trend for tiers to come.\n\nRankings:\nUldir - US 449th CE\nDazar'alor - US 138th CE\nEternal Palace - US 44th HOF\n\nRaid Times:\nTuesday, Thursday, Sunday, Monday 8PM-11PM CST\n\nRecruitment:\nImmediate openings for a Disc Priest, Mage, and Warlock.\n\nWe don't recruit for the bench, core spots are up for grabs. We are very generous with opportunities given to trials to demonstrate their abilities and earn a spot. We will always consider an exceptional applicant regardless of their class or spec. ",
+      "id": "30",
+      "author": "purkleton",
+      "name": "Roulette",
+      "realm": "Sargeras",
+      "class": "Alliance"
+    }
+  }
 }

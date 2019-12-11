@@ -14,6 +14,12 @@
     },
     "purkleton": {
       "passwordHash": "$2a$10$tVueFr64Ki2ekBcMKDtwpux6f1Jg7C9JHGASfogSeBn2yIaGcQM6S"
+    },
+    "purkley": {
+      "passwordHash": "$2a$10$qu3sJSc2iurnIqPEwx7FI.o4DVqEkRmq1BQjq.JK4AalOUrRn4IWq"
+    },
+    "p": {
+      "passwordHash": "$2a$10$TS2E7E88ydqG7nM/EUcMsuQMWZpssk/v2YtBLfWQXQBstDitYx8mK"
     }
   }
 }

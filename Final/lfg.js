@@ -106,7 +106,7 @@ export async function handleLFGEdit(event) {
         url: url,
     });
     let obj = result.data.result;
-    let e = `<div id=${id} class="box is-dark"><p><span class=${obj.class}>${obj.name}-${obj.realm}</span></p>
+    let e = `<div id=${id} class="box is-dark"><p><span class=${obj.class}>${obj.name}</span>-<span class=${obj.faction}>${obj.realm}</span></p>
                 <textarea id="editedBody${id}" rows=4 cols=50>${obj.post}</textarea>
                 <div class="columns"><div class="column has-text-centered"><button type="submit" class="button subEditButton${id} is-dark">Post</button>
                 <button type="button" class="button cancelEditButton${id} is-dark">Cancel</button></div></div>
@@ -127,11 +127,12 @@ export async function submitLFGEdit(event) {
     let name = result.data.result.name;
     let realm = result.data.result.realm;
     let c = result.data.result.class;
+    let faction = result.data.result.faction;
     let u = `http://localhost:3000/public/lfg/${id}`;
     const res = await axios({
         method: 'post',
         url: u,
-        data: { data: { 'post': body, 'id': id, 'author': user, 'name': name, 'realm': realm, 'class': c } },
+        data: { data: { 'post': body, 'id': id, 'author': user, 'name': name, 'realm': realm, 'class': c, 'faction': faction } },
     });
 
     showLFGPosts();
@@ -232,7 +233,7 @@ export async function handlePost() {
     let id = await getID();
     let slug = $('#realm').val().toLowerCase();
     let name_l = $('#name').val().toLowerCase();
-    var c, realm, name;
+    var c, realm, name, faction;
     if (type == 'lfg') {
         try {
             let u = `https://us.api.blizzard.com/profile/wow/character/${slug}/${name_l}?namespace=profile-us&locale=en_US&access_token=${token}`;
@@ -243,6 +244,7 @@ export async function handlePost() {
             c = res.data.character_class.name;
             realm = res.data.realm.name;
             name = res.data.name;
+            faction = res.data.faction.name;
         } catch (error) {
             let e = `<div id="error">
                 <p class="error">Invalid Character</p>
@@ -260,6 +262,7 @@ export async function handlePost() {
             c = res.data.faction.name;
             realm = res.data.realm.name;
             name = res.data.name;
+            faction = c;
         } catch (error) {
             let e = `<div id="error">
             <p class="error">Invalid Guild</p>
@@ -272,7 +275,7 @@ export async function handlePost() {
     const result = await axios({
         method: 'post',
         url: url,
-        data: { data: { 'post': body, 'id': id, 'author': user, 'name': name, 'realm': realm, 'class': c, 'slug': slug, 'name_l': name_l } },
+        data: { data: { 'post': body, 'id': id, 'author': user, 'name': name, 'realm': realm, 'class': c, 'slug': slug, 'name_l': name_l, 'faction': faction } },
     });
     id++;
     updateID(id);
@@ -310,7 +313,7 @@ export async function checkLogIn() {
 export function renderPost(obj) {
     if (obj.author == user) {
         let e = `<div id=${obj.id} class="box is-dark">
-        <p><strong><span class=${obj.class}>${obj.name}-${obj.realm}</span></strong>
+        <p><strong class="has-text-white"><span class=${obj.class}>${obj.name}</span>-<span class=${obj.faction}>${obj.realm}</span></strong>
             <br>
             ${obj.post}
             <br>

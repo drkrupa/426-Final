@@ -1,2 +1,31 @@
 {
+  "purkleton": {
+    "searches": [
+      "purkleton",
+      "apurk",
+      "fistypurk",
+      "cliff",
+      "praypurk"
+    ]
+  },
+  "apurk": {
+    "searches": [
+      "apurk"
+    ]
+  },
+  "notpurk": {
+    "searches": [
+      "apurk"
+    ]
+  },
+  "purkley": {
+    "searches": [
+      "apurk"
+    ]
+  },
+  "p": {
+    "searches": [
+      "apurk"
+    ]
+  }
 }
